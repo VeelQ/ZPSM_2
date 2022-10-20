@@ -54,3 +54,33 @@ console.log(fun(user))
 
 
 console.log(_.find(user.allGrades, a => a = 1))
+
+const reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+const collections = [
+    {},
+    15,
+    "hello@test.pl",
+    null,
+    ['aaa', 'bbb', 5],
+    'admin@gmail.com',
+    undefined,
+    'a34@yahoo.com',
+    '321@a',
+    '321.pl'
+    ];
+
+let getMails = () => {
+    let qwe = []
+    for (let m = 0; m < collections.length; m++) {
+        if (reg.test(collections[m]) != false ) {
+            qwe.push(collections[m])
+        }
+        else {
+            continue
+        }   
+    }
+    console.log(qwe.sort())
+}
+
+getMails(collections)

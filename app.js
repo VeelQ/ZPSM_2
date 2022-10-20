@@ -51,3 +51,6 @@ let fun = x => {
 }
 
 console.log(fun(user))
+
+
+console.log(_.find(user.allGrades, a => a = 1))
